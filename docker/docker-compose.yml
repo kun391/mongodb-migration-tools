@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  python:
+    build:
+      context: ../
+      dockerfile: ./docker/python.Dockerfile
+    working_dir: "/app"
+    command: tail -f /dev/null
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
